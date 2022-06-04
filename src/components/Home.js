@@ -65,6 +65,7 @@ const Welcome = styled.div`
     max-height: 200vh;
     max-width: 100vh;
     overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 `
 

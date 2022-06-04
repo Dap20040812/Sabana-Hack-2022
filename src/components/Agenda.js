@@ -1,17 +1,50 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-
+import CloseIcon from '@material-ui/icons/Close';
 
 function Agenda() {
+    const[cancelStatus, setCancelStatus] = useState(false);
+    const cancel = () => {
+        setCancelStatus(true); 
+     }
+     const close = () => {
+        setCancelStatus(false); 
+     }
   return (
     <Container>
         <Background>
             <img src="https://www.studiosur.net/wp-content/uploads/2019/10/U.-de-la-Sabana-10-1500x993.jpg" />
         </Background>
-        <Title>Agenda</Title>
+        <Alert show={cancelStatus}>
+            <CloseWrapper>
+                <CustomClose onClick={close}/>
+            </CloseWrapper>
+            <Title1>Acto de Apertura</Title1>
+            <Detail>
+                <Line/>
+                <Section>
+                    <Text>Lider : </Text>
+                    <Text> Jenny</Text>
+                </Section>
+                <Line/>
+                <Section>
+                    <Text>Hora del Evento : </Text>
+                    <Text> 8:00 - 9:00 am</Text>
+                </Section>
+                <Line/>
+                <Section>
+                    <Text>Detalles : </Text>
+                    <Text>NO Se holi</Text>
+                </Section>
+                <Line/>
+                <ButtonS>Accede al Evento</ButtonS>
+            </Detail>
+
+        </Alert>
+        <Title>Agenda</Title>   
         <Data>
             <Date>Sábado 7</Date>
-            <Activity>
+            <Activity onClick={cancel}>
                 <Text>Acto de Apertura</Text>
                 <Time>8:00 - 9:00 am</Time>
             </Activity>
@@ -24,7 +57,7 @@ function Agenda() {
                 <Time>10:00 am</Time>
             </Activity>
         </Data>
-
+        
     </Container>
   )
 }
@@ -66,6 +99,16 @@ const Title = styled.div`
     overflow: hidden;
     
 `
+const Title1 = styled.div`
+    margin-top: 3vh;
+    font-size: 8vh;
+    padding: 2vh;
+    color: black;
+    max-height: 200vh;
+    width: 100vh;
+    overflow: hidden;
+    
+`
 const Welcome = styled.div`
     margin-top: 5vh;
     font-size: 3vh;
@@ -94,7 +137,7 @@ const TextPart = styled.div`
     flex-direction: column;
 `
 const Text = styled.div`
-    font-size: 2.5vh;
+    font-size: 2.8vh;
 `
 const Data = styled.div`
     border-radius: 1vh;
@@ -102,7 +145,7 @@ const Data = styled.div`
     margin-top: 5vh;
     opacity: 0.9;
     max-height: 200vh;
-    width: 70vh;
+    width: 100vh;
     overflow: hidden;
     border: 3px solid rgba(249, 249, 249, 0.7); 
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
@@ -112,12 +155,13 @@ const Data = styled.div`
 const Date = styled.div`
     top: 0;
     width: 100%;
-    font-size: 3vh;
-    background: url(images/boton.jpg)
+    font-size: 5vh;
+    background: url(images/boton.jpg);
 `
 const Activity = styled.div`
     margin: 1vh;
     display: flex;
+    height: 8vh;
     color: black;
     flex-direction: row;
     align-items:center;
@@ -142,6 +186,93 @@ const Activity = styled.div`
 
 const Time = styled.div`
     margin-left: 2vh;
-    font-size: 2.5vh;
+    font-size: 2.8vh;
 
+`
+const Alert = styled.div`
+  position: fixed;
+  top: 10%;
+  left: 27%;
+  right: 30%;
+  right: 30vw;
+  background: white;
+  border: 3px solid rgba(136, 148, 122, 0.7); 
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+  rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  width: 100vh;
+  height: 70vh;
+  z-index: 16;
+  list-style: none;
+  padding: 2vw 2vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transform: ${props => props.show ===false ? 'translatey(-10000%)': 'translatey(0%)'};
+  li{
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
+    a{
+      font-weight: 600; 
+    }
+    &:hover {
+        border-radius: 0.6vh;
+        border-color: rgba(249, 249, 249 , 0.8);
+        color: white;
+        background-color: #0000003D;
+        opacity: 0.9;
+    }
+  }
+`
+const CustomClose = styled(CloseIcon)`
+  cursor: pointer;  
+  color: black;
+`
+const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+const Detail = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    color: black;
+    align-items: center;
+`
+const Section = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+
+`
+const Line = styled.hr`
+    background-color: black;
+    background: black;
+    border: 0.2vh solid;
+    width: 100%;
+`
+const ButtonS = styled.a`
+    width: 40vh;
+    background-color: #19336A;
+    font-weight: bold;
+    padding: 17px 0;
+    color: #f9f9f9;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 3vh;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    margin-top: 10vh;
+
+    &:hover {
+        background: url(images/boton.jpg);
+        opacity: 0.8;
+        transform: scale(1.05);
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
+        rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+        border-color: rgba(249, 249, 249 , 0.8);
+    }
+
+    
 `

@@ -62,7 +62,6 @@ export default Header
 
 const Nav = styled.nav`
       height: 100%;
-      width: 97%;
       background: #19336A;
       display: flex;
       flex-wrap: wrap;
