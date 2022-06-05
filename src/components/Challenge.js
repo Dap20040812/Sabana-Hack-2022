@@ -148,7 +148,8 @@ const ListItem = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 3vh;
-    background: white;
+    background: #ffffffED;
+    border-radius: 2vh;
 `
 
 const ItemTitle = styled.p `
@@ -163,7 +164,7 @@ const ItemContent = styled.div `
     background-color: white;
     width: 80vw;
     text-align: left;
-    background: transparent;
+    background: white;
 `
 
 const ListMain = styled.div `
