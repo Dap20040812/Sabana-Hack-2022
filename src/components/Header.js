@@ -48,7 +48,7 @@ function Header() {
               <CloseWrapper>
                   <CustomClose onClick={()=> setBurgerStatus(false)}/>
               </CloseWrapper>
-              <StyledLink1><li>Mentores</li></StyledLink1>
+              <StyledLink1 to={`mentors`}><li>Mentores</li></StyledLink1>
               <StyledLink1><li>Participantes</li></StyledLink1>
               <StyledLink1><li>Jurados</li></StyledLink1>
               <StyledLink1><li>Mesa de Ayuda</li></StyledLink1>

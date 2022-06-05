@@ -30,7 +30,7 @@ function Challenge() {
                         Mentores
                     </Description>
                     <Mentors>
-                        <MentorItem onClick={handleClick2}>
+                        <MentorItem>
                             <MentorPhoto src={"/images/messi.jpg"}/>
                             <MentorInfo>
                                 <MentorName>Nombre</MentorName>
@@ -85,6 +85,10 @@ function Challenge() {
 
   return (
     <Container>
+        <Background>
+            <img src='https://www.unisabana.edu.co/fileadmin/Archivos_de_usuario/Imagenes/Imagenes_Programas/Imagenes_Pregrado/Ingenieria_Industrial/Sabana_Hack_foto_1.jpeg'></img>
+        </Background>
+        <Title>Retos</Title>
         <Alert show={mentorInfo}>
             <p>hola</p>
             <Close onClick={() => setMentorInfo(false)}></Close>
@@ -112,12 +116,28 @@ const Container = styled.div`
     position: relative;
     align-items: center;
     justify-content: center;
-    background-color: white;
+`
+const Background = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.7;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        filter: brightness(50%);
+    }
 `
 const List = styled.div `
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
+    background: transparent;
 `
 
 const ListItem = styled.div `
@@ -128,6 +148,7 @@ const ListItem = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 3vh;
+    background: white;
 `
 
 const ItemTitle = styled.p `
@@ -142,6 +163,7 @@ const ItemContent = styled.div `
     background-color: white;
     width: 80vw;
     text-align: left;
+    background: transparent;
 `
 
 const ListMain = styled.div `
@@ -194,7 +216,16 @@ const MentorItem = styled.div `
         opacity: 0.9;
     }
 `
-
+const Title = styled.div`
+    margin-top: 5vh;
+    font-size: 10vh;
+    padding: 2vh;
+    
+    max-height: 200vh;
+    width: 100vh;
+    overflow: hidden;
+    
+`
 const MentorName = styled.p `
     
 `

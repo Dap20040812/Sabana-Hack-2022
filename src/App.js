@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link,Switch} from 'react-router-dom';
 import Agenda from './components/Agenda';
 import Challenge from './components/Challenge';
 import Awards from './components/Awards';
+import Mentors from './components/Mentors';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/agenda' component={Agenda}/>
           <Route path='/challenge' component={Challenge}/>
           <Route path='/awards' component={Awards}/>
+          <Route path='/mentors' component={Mentors}/>
         </Switch>
       </Router>
     </div>
