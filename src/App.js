@@ -7,6 +7,7 @@ import Agenda from './components/Agenda';
 import Challenge from './components/Challenge';
 import Awards from './components/Awards';
 import Mentors from './components/Mentors';
+import Jurors from './components/Jurors'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/challenge' component={Challenge}/>
           <Route path='/awards' component={Awards}/>
           <Route path='/mentors' component={Mentors}/>
+          <Route path='/judges' component={Jurors}/>
         </Switch>
       </Router>
     </div>

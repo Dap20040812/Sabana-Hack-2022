@@ -50,7 +50,7 @@ function Header() {
               </CloseWrapper>
               <StyledLink1 to={`mentors`}><li>Mentores</li></StyledLink1>
               <StyledLink1><li>Participantes</li></StyledLink1>
-              <StyledLink1><li>Jurados</li></StyledLink1>
+              <StyledLink1 to={`judges`}><li>Jurados</li></StyledLink1>
               <StyledLink1><li>Mesa de Ayuda</li></StyledLink1>
               <StyledLink1><li>Preguntas</li></StyledLink1>
           </BurgerNav>
