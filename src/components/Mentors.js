@@ -19,6 +19,25 @@ function Mentors() {
             <CloseWrapper>
                 <CustomClose onClick={close}/>
             </CloseWrapper>
+            <AlertInfo>
+                <AlertLeft>
+                    <PhotoDiv>
+                        <MentorPhoto2 src={"/images/messi.jpg"}/>
+                    </PhotoDiv>
+                    <MentorName2 href='https://www.linkedin.com/in/christianabril/'>Nombre</MentorName2>
+                </AlertLeft>
+                <AlertRight>
+                    <MentorSchedule>Horario de atencion</MentorSchedule>
+                    <Line/>
+                    <MentorField>Campo</MentorField>
+                    <Line/>
+                    <MentorTeams>Teams</MentorTeams>
+                    <Line/>
+                    <MentorChallenge>Reto</MentorChallenge>
+                    <Line/>
+                    <MentorEmail>Email</MentorEmail>
+                </AlertRight>
+            </AlertInfo>
         </Alert>
         <Title>Mentores</Title>
         <Mentor>
@@ -96,60 +115,6 @@ const Background = styled.div`
         filter: brightness(50%);
     }
 `
-const List = styled.div `
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-    background: transparent;
-`
-
-const ListItem = styled.div `
-    border: 1px solid lightgrey; 
-    width: 80vw;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 3vh;
-    background: white;
-`
-
-const ItemTitle = styled.p `
-    font-weight: 600;
-    font-size: 22px;
-    padding-left: 2vw;
-`
-
-const ItemContent = styled.div `
-    font-size: 14px;
-    font-weight: 400;
-    background-color: white;
-    width: 80vw;
-    text-align: left;
-    background: transparent;
-`
-
-const ListMain = styled.div `
-    background-color: #0000000D;
-    cursor: pointer;
-    text-align: left;
-    width: 80vw;
-`
-
-const Description = styled.div `
-    font-size: 18px;
-    font-weight: 500;
-    padding-left: 2vw;
-    padding-top: 2vh;
-    padding-bottom: 1vh;
-`
-
-const DescInfo = styled.div `
-    font-weight: 400;
-    font-size: 14px;
-    padding-left: 2vw;
-    padding-bottom: 1vh;
-`
 
 const Mentor = styled.div `
     display: grid;
@@ -157,6 +122,7 @@ const Mentor = styled.div `
     grid-gap: 2vh;
     margin-top: 1vh;
     margin-left: 2vw;
+    width: 60vw;
 `
 const MentorItem = styled.div `
     border-radius: 7px;
@@ -167,7 +133,6 @@ const MentorItem = styled.div `
     cursor: pointer;
     overflow: hidden;
     color: black;
-    width: 80%;
     margin: 1% 2.5%;
     border: 3px solid #19336A; 
     transition: all 650ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -196,13 +161,8 @@ const MentorName = styled.p `
 
 const MentorPhoto = styled.img `
     width: 6vw;
-`
-const Judges = styled.div `
-
-`
-
-const JudgeItem = styled.div `
-
+    padding: 2px;
+    border: 1px solid black;
 `
 
 const MentorInfo = styled.div `
@@ -210,7 +170,9 @@ const MentorInfo = styled.div `
 `
 
 const MentorConocimiento = styled.p `
+
 `
+
 const Alert = styled.div`
   position: fixed;
   top: 10%;
@@ -227,6 +189,7 @@ const Alert = styled.div`
   list-style: none;
   padding: 2vw 2vh;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   text-align: center;
   transform: ${props => props.show ===false ? 'translatey(-10000%)': 'translatey(0%)'};
@@ -250,8 +213,89 @@ const Alert = styled.div`
 const CustomClose = styled(CloseIcon)`
   cursor: pointer;  
   color: black;
+  padding-right: 1vw;
 `
+
 const CloseWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+`
+
+const AlertInfo = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding-top: 6vh;
+    border: 3px solid black;
+    height: 57vh;
+    width: 100vh;
+`
+
+const AlertRight = styled.div `
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    padding-left: 3vw;
+`
+
+const AlertLeft = styled.div `
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 3vw;
+    padding-top: 8vh;
+`
+
+const MentorSchedule = styled.p `
+
+`
+
+const MentorChallenge = styled.p `
+
+`
+
+const MentorField = styled.p `
+
+`
+
+const MentorEmail = styled.p `
+
+`
+
+const MentorTeams = styled.p `
+
+`
+
+const MentorPhoto2 = styled.img `
+    width: 25vh;
+    padding: 4px;
+`
+
+const MentorName2 = styled.a `
+    font-size: 28px;
+    color: black;
+    margin-top: 1vh;
+
+    &:hover {
+        color: #19336A;
+    }
+`
+
+const Line = styled.hr`
+    background-color: #19336A;
+    background: #19336A;
+    border: 0.15vh solid;
+    width: 30vh;
+`
+
+const PhotoDiv = styled.div `
+    display: flex;
+    align-items: center;
+    border: 3px solid #19336A;
 `
